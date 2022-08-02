@@ -1,0 +1,26 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 900px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  height: 70px;
+  border: none;
+}
+
+.button{
+  width: 70px;
+  height: 30px;
+  align-self: flex-end;
+  border: none;
+  color: white;
+  background: #B96B85;
+}

@@ -1,48 +1,21 @@
-.wrapper {
+.app-wrapper {
   display: grid;
   max-width: 1200px;
   grid-template-areas: 
   "header header"
   "nav main";
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
   margin: 0 auto;
-}
-
-.header {
-  grid-area: header;
-  background: rgb(165, 198, 204);
-}
-
-.nav {
-  grid-area: nav;
-  background: rgb(165, 198, 204);
 }
 
 .main {
   grid-area: main;
-  background: rgb(165, 198, 204);
-  
+  background: #ffdce3;
+  color: #021E20;
+  padding: 10px;
 }
 
-.logo-img {
-  height: 70px;
-}
 
-.main-img-wrapper {
-  width: 1000px;
-  height: 200px;
-  overflow: hidden;
-}
 
-.main-img {
-  width: 100%;
-  height: auto;
-  margin-top: -170px;
 
-}
-
-.about__img {
-  height: 100px;
-}
