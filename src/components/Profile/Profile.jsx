@@ -3,7 +3,7 @@ import {MyPosts} from './MyPosts/MyPosts';
 
 export const Profile = () => {
   return (
-    <main className={classes.main}>
+    <div>
         <div className={classes.imgWrapper}>
           <img className={classes.img} src='http://www.cita.com.ua/img/ntours/big/4/1599228157.jpg' alt='main-img'></img>
         </div>
@@ -12,6 +12,6 @@ export const Profile = () => {
           <div>Info</div>
         </div>
         <MyPosts />
-      </main>
+      </div>
   );
 }

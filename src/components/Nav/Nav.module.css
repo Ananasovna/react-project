@@ -5,7 +5,11 @@
   color: white;
 }
 
-.nav a {
+a {
   color: white;
   text-decoration: none;
+}
+
+.activeLink {
+  color: #005067;
 }
