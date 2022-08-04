@@ -5,7 +5,7 @@ const setActive = ({isActive}) => isActive ? classes.activeLink : classes.a;
 
 export const Nav = () => {
   return(
-      <aside className={classes.nav}>
+      <nav className={classes.nav}>
         <div>
           <NavLink to='/Profile' className={setActive}>Profile</NavLink>
         </div>
@@ -19,6 +19,6 @@ export const Nav = () => {
           <NavLink to='/Music' className={setActive}>Music</NavLink>
         </div>
         
-      </aside>
+      </nav>
   );
 }

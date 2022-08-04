@@ -6,7 +6,7 @@ export const MyPosts = () => {
     <div className={classes.posts}>
       <div className={classes.inputWrapper}>
         <div className={classes.h2}>My posts</div>
-        <input className={classes.input}></input>
+        <textarea className={classes.input}></textarea>
         <button className={classes.button}>Send</button>
       </div>
       <Post text='How are you?' likeCounter='10'/>

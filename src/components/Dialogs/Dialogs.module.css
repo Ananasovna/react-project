@@ -1,0 +1,9 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.active {
+  font-size: 20px;
+  font-weight: 700;
+}
