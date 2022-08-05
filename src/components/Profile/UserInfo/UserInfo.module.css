@@ -1,0 +1,45 @@
+.userInfo {
+  margin-bottom: 20px;
+}
+
+.imgWrapper {
+  width: 1040px;
+  height: 300px;
+  margin: -50px -90px -50px -50px;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  margin-top: -170px;
+
+}
+
+.avatar {
+  height: 100px;
+}
+
+.about {
+  width: 500px;
+  display: flex;
+  gap: 30px;
+  position: relative;
+  top: -5px;
+  padding: 20px;
+  background:rgba(225, 213, 217, 0.7);
+}
+
+.h3 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0 0 10px;
+}
+
+.infoWrapper {
+  display: grid;
+}
+
+.info {
+  margin: 0;
+}

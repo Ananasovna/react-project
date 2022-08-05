@@ -12,9 +12,10 @@
 
 .main {
   grid-area: main;
-  background: #ffdce3;
-  color: #021E20;
+  background: #F6F2F6;
+  color: #1C252C;
   padding: 50px 90px 50px 50px;
+  border-left: 5px solid #58545B;
 }
 
 

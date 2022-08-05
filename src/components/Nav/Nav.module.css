@@ -1,15 +1,17 @@
 .nav {
   grid-area: nav;
+  min-width: 129px;
   padding: 10px;
-  background: #B96B85;
-  color: white;
+  background:#F6F2F6;
 }
 
 .nav a {
-  color: white;
+  color: #1C252C;
   text-decoration: none;
 }
 
 .activeLink {
-  color: #005067;
+  font-size: 20px;
+  font-weight: 700;
+  color: #58545B;
 }

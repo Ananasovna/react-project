@@ -2,14 +2,13 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
-  /* grid-template: 1fr/ 1fr 10fr; */
   grid-template-areas: 
   'img text'
   'like like';
   align-items: start;
   padding: 10px;
   color: white;
-  background: rgba(0, 80, 103, 0.5);
+  background: #B7A7AE;
 }
 
 .img {
