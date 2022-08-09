@@ -5,19 +5,33 @@ import { DialogItem } from './DialogItem/DialogItem';
 let longText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid cupiditate dicta provident, libero delectus perferendis veniam fugiat voluptatum magnam excepturi, quidem iste? Saepe expedita voluptatum assumenda ipsum ullam impedit.'
 
 export const Dialogs = () => {
+  const dialogsData = [
+    {id: 1, name: 'Ann'},
+    {id: 2, name: 'Kate'},
+    {id: 3, name: 'Peter'},
+    {id: 4, name: 'Nancy'},
+    {id: 5, name: 'Mikhail'},
+  ];
+
+  const messagesData = [
+    {id: 1, text: 'hi'},
+    {id: 2, text: 'Whats up?'},
+    {id: 3, text: longText}
+  ];
+
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogsList}>
-        <DialogItem id='1' user='Ann' />
-        <DialogItem id='2' user='Kate' />
-        <DialogItem id='3' user='Peter' />
-        <DialogItem id='4' user='Nancy' />
-        <DialogItem id='5' user='Mikhail' />
+        <DialogItem id={dialogsData[0].id} user={dialogsData[0].name} />
+        <DialogItem id={dialogsData[1].id} user={dialogsData[1].name} />
+        <DialogItem id={dialogsData[2].id} user={dialogsData[2].name} />
+        <DialogItem id={dialogsData[3].id} user={dialogsData[3].name} />
+        <DialogItem id={dialogsData[4].id} user={dialogsData[4].name} />
       </div>
       <div className={classes.messages}>
-        <Message text='hi' />
-        <Message text='Whats up?' />
-        <Message text={longText} />
+        <Message text={messagesData[0].text} />
+        <Message text={messagesData[1].text} />
+        <Message text={messagesData[2].text} />
       </div>
     </div>
   );
