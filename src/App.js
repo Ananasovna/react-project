@@ -7,7 +7,7 @@ import { Music } from './components/Music/Music';
 import { Profile } from './components/Profile/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -15,7 +15,7 @@ const App = () => {
         <Nav />
         <main className="main">
           <Routes>
-            <Route path="/Profile" element={<Profile />}/>
+            <Route path="/Profile" element={<Profile postsArr={props.postsArr}/>}/>
             <Route path="/Dialogs/*" element={<Dialogs />}/>
             <Route path="/News" element={<News />}/>
             <Route path="/Music" element={<Music />}/>
