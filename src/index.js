@@ -3,17 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const postsData = [
-  {id: 1, text: 'How are you?', likeCounter: '53'},
-  {id: 2, text: 'What a good day!', likeCounter: '2'},
-  {id: 3, text: "It's my first post", likeCounter: '10'}
-]
+import {state} from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App postsArr={postsData}/>
+    <App state={state}/>
   </React.StrictMode>
 );
 
