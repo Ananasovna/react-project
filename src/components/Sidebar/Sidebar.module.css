@@ -1,6 +1,6 @@
-.nav {
+.sidebar {
   grid-area: nav;
-  min-width: 129px;
+  /* width: 155px; */
   padding: 10px;
   background:#F6F2F6;
 }
@@ -10,7 +10,7 @@
   text-decoration: none;
 }
 
-.activeLink {
+.activeLink, .h2 {
   font-size: 20px;
   font-weight: 700;
   color: #58545B;

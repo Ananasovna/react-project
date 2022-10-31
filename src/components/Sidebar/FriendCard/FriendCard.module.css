@@ -1,0 +1,14 @@
+.friendCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.img {
+  height: 50px;
+  width: 50px;
+}
+
+.name {
+  margin: 0;
+}

@@ -1,15 +1,18 @@
 .message {
-width: fit-content;
-min-width: 100px;
-/* display: inline-block; */
-  color: white;
-  background: #B7A7AE;
-  padding: 10px;
-  margin: 10px 0;
+  width: fit-content;
+  min-width: 100px;
+  color: #1C252C;
+  border: 1px solid #B7A7AE;
 }
 
 .text {
   margin: 0;
-  padding: 10px 15px 20px 10px;
+  padding: 5px 10px 5px 5px;
   border: 1px solid white;
+}
+
+.currentUser {
+  background: rgba(225, 213, 217, 0.7);
+  border: none;
+  align-self: flex-end;
 }

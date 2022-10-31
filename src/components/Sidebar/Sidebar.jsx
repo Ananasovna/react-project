@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import classes from './Nav.module.css';
+import classes from './Sidebar.module.css';
+import { Friends } from './Friends/Friends';
 
 const setActive = ({isActive}) => isActive ? classes.activeLink : classes.a;
 
-export const Nav = () => {
+export const Sidebar = (props) => {
   return(
+    <div className={classes.sidebar}>
       <nav className={classes.nav}>
         <div>
           <NavLink to='/Profile' className={setActive}>Profile</NavLink>
@@ -18,7 +20,8 @@ export const Nav = () => {
         <div>
           <NavLink to='/Music' className={setActive}>Music</NavLink>
         </div>
-        
       </nav>
+      <Friends state={props.state}/>
+    </div>
   );
 }

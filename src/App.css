@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .app-wrapper {
   display: grid;
   max-width: 1200px;
@@ -12,6 +16,7 @@
 
 .main {
   grid-area: main;
+  min-width: 1000px;
   background: #F6F2F6;
   color: #1C252C;
   padding: 50px 90px 50px 50px;
