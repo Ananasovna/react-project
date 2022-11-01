@@ -9,11 +9,7 @@ export const Friends = (props) => {
         <h2 className={classes.h2}>My friends</h2>
         <div className={classes.cardsWrapper}>
           {friendsArr.map( el => <FriendCard state={el}/>)}
-        {/* // <FriendCard state={props.state[1]}/>
-        // <FriendCard state={props.state[2]}/>
-        // <FriendCard state={props.state[3]}/> */}
         </div>
-
     </div>
   );
 }
