@@ -1,3 +1,5 @@
+import { rerender } from "../render";
+
 export let state = {
   profile: {
     postsData: [
@@ -25,5 +27,15 @@ export let state = {
       {id: 6, text: 'I am ok'},
     ],
   },
-  
+}
+
+export let addPost = (text) => {
+  let newPost = {
+    id: 4,
+    text: text,
+    likeCounter: 0,
+  };
+
+  state.profile.postsData.push(newPost);
+  rerender(state, addPost);
 }
