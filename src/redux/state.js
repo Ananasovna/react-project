@@ -1,4 +1,5 @@
-import { rerender } from "../render";
+let rerender = () => {
+}
 
 export let state = {
   profile: {
@@ -43,12 +44,12 @@ export let functions = {
 
     state.profile.postsData.push(newPost);
     state.profile.newPostText = '';
-    rerender(state, functions);
+    rerender(state);
   },
   
   updateNewPostText: function(newText) {
     state.profile.newPostText = newText;
-    rerender(state, functions);
+    rerender(state);
   },
   
   addMessage: function() {
@@ -60,11 +61,15 @@ export let functions = {
 
     state.dialogs.messagesData.push(newMessage);
     state.dialogs.newMessageText = '';
-    rerender(state, functions);
+    rerender(state);
   },
   
   updateNewMessageText: function(newText) {
     state.dialogs.newMessageText = newText;
-    rerender(state, functions);
+    rerender(state);
   },
+}
+
+export const subscribe = (observer) => {
+  rerender = observer;
 }
