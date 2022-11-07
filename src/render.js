@@ -4,11 +4,11 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export let rerender = (state, addPost) => {
+export let rerender = (state, functions) => {
   
   root.render(
     <React.StrictMode>
-      <App state={state} addPost={addPost}/>
+      <App state={state} functions={functions}/>
     </React.StrictMode>
   );
 }
