@@ -16,8 +16,14 @@ const App = (props) => {
         <main className="main">
           <Routes>
             <Route path="/" element={<Profile state={props.state.profile}/>}/>
-            <Route path="/Profile" element={<Profile state={props.state.profile}/>}/>
-            <Route path="/Dialogs/*" element={<Dialogs state={props.state.dialogs}/>}/>
+            <Route path="/Profile" 
+            element={<Profile state={props.state.profile}
+            addPost={props.functions.addPost} 
+            updateNewPostText={props.functions.updateNewPostText}/>}/>
+            <Route path="/Dialogs/*" element={<Dialogs 
+            state={props.state.dialogs}
+            addMessage={props.functions.addMessage}
+            updateNewMessageText={props.functions.updateNewMessageText}/>}/>
             <Route path="/News" element={<News />}/>
             <Route path="/Music" element={<Music />}/>
           </Routes>

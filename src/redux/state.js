@@ -1,3 +1,5 @@
+import { rerender } from "../render";
+
 export let state = {
   profile: {
     postsData: [
@@ -5,6 +7,8 @@ export let state = {
       {id: 2, text: 'What a good day!', likeCounter: '2'},
       {id: 3, text: "It's my first post", likeCounter: '10'}
     ],
+
+    newPostText: '',
   },
   
   dialogs: {
@@ -24,6 +28,43 @@ export let state = {
       {id: 5, text: 'All fine, you?', authorId: 0},
       {id: 6, text: 'I am ok'},
     ],
+
+    newMessageText: '',
+  },
+}
+
+export let functions = {
+  addPost: function() {
+    let newPost = {
+      id: state.profile.postsData.length + 1,
+      text: state.profile.newPostText,
+      likeCounter: 0,
+    };
+
+    state.profile.postsData.push(newPost);
+    state.profile.newPostText = '';
+    rerender(state, functions);
   },
   
+  updateNewPostText: function(newText) {
+    state.profile.newPostText = newText;
+    rerender(state, functions);
+  },
+  
+  addMessage: function() {
+    let newMessage = {
+      id: state.dialogs.messagesData.length + 1, 
+      text: state.dialogs.newMessageText, 
+      authorId: 0
+    }
+
+    state.dialogs.messagesData.push(newMessage);
+    state.dialogs.newMessageText = '';
+    rerender(state, functions);
+  },
+  
+  updateNewMessageText: function(newText) {
+    state.dialogs.newMessageText = newText;
+    rerender(state, functions);
+  },
 }
