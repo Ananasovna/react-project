@@ -6,12 +6,12 @@ export const MyPosts = (props) => {
   let newPost = React.createRef();
 
   let addPost = () => {
-    props.addPost(props.newPostText);
+    props.store.addPost(props.posts.newPostText);
 
   }
 
   let changePostText = () => {
-    props.updateNewPostText(newPost.current.value);
+    props.store.updateNewPostText(newPost.current.value);
   }
   
   return (

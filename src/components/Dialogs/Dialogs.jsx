@@ -9,11 +9,11 @@ export const Dialogs = (props) => {
   let newText = React.createRef();
 
   let showText = () => {
-    props.addMessage(props.state.newMessageText);
+    props.store.addMessage(props.state.newMessageText);
   }
 
   let changeMessageText = () => {
-    props.updateNewMessageText(newText.current.value);
+    props.store.updateNewMessageText(newText.current.value);
   }
 
   return (

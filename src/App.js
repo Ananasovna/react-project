@@ -15,15 +15,15 @@ const App = (props) => {
         <Sidebar state={props.state.dialogs.dialogsData} />
         <main className="main">
           <Routes>
-            <Route path="/" element={<Profile state={props.state.profile}/>}/>
-            <Route path="/Profile" 
-            element={<Profile state={props.state.profile}
-            addPost={props.functions.addPost} 
-            updateNewPostText={props.functions.updateNewPostText}/>}/>
+            <Route path="/" element={<Profile 
+            state={props.state.profile}
+            store={props.store}/>}/>
+            <Route path="/Profile" element={<Profile 
+            state={props.state.profile}
+            store={props.store}/>}/>
             <Route path="/Dialogs/*" element={<Dialogs 
             state={props.state.dialogs}
-            addMessage={props.functions.addMessage}
-            updateNewMessageText={props.functions.updateNewMessageText}/>}/>
+            store={props.store}/>}/>
             <Route path="/News" element={<News />}/>
             <Route path="/Music" element={<Music />}/>
           </Routes>
