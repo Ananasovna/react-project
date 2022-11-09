@@ -10,7 +10,7 @@ export const Profile = (props) => {
         <UserInfo />
         <MyPosts 
         posts={props.state}
-        store={props.store}/>
+        dispatch={props.dispatch}/>
       </div>
   );
 }

@@ -17,13 +17,13 @@ const App = (props) => {
           <Routes>
             <Route path="/" element={<Profile 
             state={props.state.profile}
-            store={props.store}/>}/>
+            dispatch={props.dispatch}/>}/>
             <Route path="/Profile" element={<Profile 
             state={props.state.profile}
-            store={props.store}/>}/>
+            dispatch={props.dispatch}/>}/>
             <Route path="/Dialogs/*" element={<Dialogs 
             state={props.state.dialogs}
-            store={props.store}/>}/>
+            dispatch={props.dispatch}/>}/>
             <Route path="/News" element={<News />}/>
             <Route path="/Music" element={<Music />}/>
           </Routes>
