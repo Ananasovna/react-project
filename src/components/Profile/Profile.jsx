@@ -1,6 +1,6 @@
 import classes from './Profile.module.css';
-import {MyPosts} from './MyPosts/MyPosts';
 import { UserInfo } from './UserInfo/UserInfo';
+import { MyPostsContainer } from './MyPosts/MyPostsContainer';
 
 export const Profile = (props) => {
  
@@ -8,9 +8,7 @@ export const Profile = (props) => {
   return (
     <div>
         <UserInfo />
-        <MyPosts 
-        posts={props.state}
-        dispatch={props.dispatch}/>
+        <MyPostsContainer store={props.store}/>
       </div>
   );
 }

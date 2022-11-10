@@ -1,5 +1,5 @@
 import './App.css';
-import { Dialogs } from './components/Dialogs/Dialogs';
+import { DialogsContainer } from './components/Dialogs/DialogsContainer';
 import { Header } from './components/Header/Header';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { News } from './components/News/News';
@@ -15,15 +15,9 @@ const App = (props) => {
         <Sidebar state={props.state.dialogs.dialogsData} />
         <main className="main">
           <Routes>
-            <Route path="/" element={<Profile 
-            state={props.state.profile}
-            dispatch={props.dispatch}/>}/>
-            <Route path="/Profile" element={<Profile 
-            state={props.state.profile}
-            dispatch={props.dispatch}/>}/>
-            <Route path="/Dialogs/*" element={<Dialogs 
-            state={props.state.dialogs}
-            dispatch={props.dispatch}/>}/>
+            <Route path="/" element={<Profile store={props.store}/>}/>
+            <Route path="/Profile" element={<Profile store={props.store}/>}/>
+            <Route path="/Dialogs/*" element={<DialogsContainer store={props.store}/>}/>
             <Route path="/News" element={<News />}/>
             <Route path="/Music" element={<Music />}/>
           </Routes>
