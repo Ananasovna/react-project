@@ -3,12 +3,10 @@ import { UserInfo } from './UserInfo/UserInfo';
 import { MyPostsContainer } from './MyPosts/MyPostsContainer';
 
 export const Profile = (props) => {
- 
-  
   return (
     <div>
         <UserInfo />
-        <MyPostsContainer store={props.store}/>
+        <MyPostsContainer />
       </div>
   );
 }
