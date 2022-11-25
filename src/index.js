@@ -12,11 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerender = (state) => {
   
   root.render(
-    <React.StrictMode>
       <Provider store={store}>
       <App />
       </Provider>
-    </React.StrictMode>
   );
 }
 

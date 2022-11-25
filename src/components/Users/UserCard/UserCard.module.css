@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  width: 10%;
+  width: 70px;
 }
 
 .avatar {
@@ -22,10 +22,11 @@
 
 .followButton {
   height: 30px;
-  width: 100%;
+  width: 70px;
   background: #B7A7AE;
   border: none;
   padding: 5px;
+  letter-spacing: 1px;
 }
 
 .userInfoWrapper {
@@ -34,4 +35,25 @@
   width: 90%;
   padding: 10px;
   border: 1px solid #B7A7AE;
+}
+
+.userNameWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userName, .location {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1C252C;
+}
+
+.locationWrapper {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  
 }

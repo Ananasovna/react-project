@@ -6,9 +6,10 @@ export let UserCard = (props) => {
     <div className={styles.userCard}>
       <div className={styles.avatarWrapper}>
         <img src={props.user.avatarSrc} alt="" className={styles.avatar} />
-        <button className={styles.followButton}>
-          {props.user.followed ? 'Unfollow' : 'Follow'}
-        </button>
+        {props.user.followed 
+        ? <button className={styles.followButton} onClick={() => { props.unfollow(props.user.id)}}>Unfollow</button>
+        : <button className={styles.followButton} onClick={() => { props.follow(props.user.id)}}>Follow</button>
+        }
       </div>
       <div className={styles.userInfoWrapper}>
         <div className={styles.userNameWrapper}>

@@ -8,7 +8,7 @@ export const Friends = (props) => {
     <div className={classes.friends}>
         <h2 className={classes.h2}>My friends</h2>
         <div className={classes.cardsWrapper}>
-          {friendsArr.map( el => <FriendCard state={el}/>)}
+          {friendsArr.map( el => <FriendCard state={el} key={el.id}/>)}
         </div>
     </div>
   );
