@@ -20,6 +20,9 @@ export const Sidebar = (props) => {
         <div>
           <NavLink to='/Music' className={setActive}>Music</NavLink>
         </div>
+        <div>
+          <NavLink to='/Users' className={setActive}>Users</NavLink>
+        </div>
       </nav>
       <Friends state={props.state}/>
     </div>

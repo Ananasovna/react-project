@@ -3,25 +3,22 @@ import {Post} from './Post/Post';
 import React from 'react';
 
 export const MyPosts = (props) => {
-  let newPost = React.createRef();
-
-  let addPost = () => {
-    props.store.addPost(props.posts.newPostText);
-
+  let onAddPostClick = () => {
+    props.addPost();
   }
 
-  let changePostText = () => {
-    props.store.updateNewPostText(newPost.current.value);
+  let onPostChange = (event) => {
+    props.changePostText(event.target.value);
   }
   
   return (
     <div className={classes.posts}>
       <div className={classes.inputWrapper}>
         <div className={classes.h2}>My posts</div>
-        <textarea className={classes.input} ref={newPost} value={props.posts.newPostText} onChange={changePostText}></textarea>
-        <button className={classes.button} onClick={addPost}>Send</button>
+        <textarea className={classes.input} value={props.newPostText} onChange={onPostChange}></textarea>
+        <button className={classes.button} onClick={onAddPostClick}>Send</button>
       </div>
-      {props.posts.postsData.map( post => <Post key={post.id} text={post.text} likeCounter={post.likeCounter}/>)}
+      {props.posts.map( post => <Post key={post.id} text={post.text} likeCounter={post.likeCounter}/>)}
     </div>
   );
 }

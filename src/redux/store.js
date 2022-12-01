@@ -1,3 +1,7 @@
+import { dialogsReducer } from "./dialogsReducer";
+import { profileReducer } from "./profileReducer";
+
+
 export let store = {
   _state: {
     profile: {
@@ -41,46 +45,15 @@ export let store = {
     this._callSubscriber = observer;
   },
 
-  addPost() {
-    let newPost = {
-      id: this._state.profile.postsData.length + 1,
-      text: this._state.profile.newPostText,
-      likeCounter: 0,
-    };
+  dispatch(action) {
+    this._state.profile = profileReducer(this._state.profile, action);
+    this._state.dialogs = dialogsReducer(this._state.dialogs, action);
+    
+    this._callSubscriber(this);
+  },
 
-    this._state.profile.postsData.push(newPost);
-    this._state.profile.newPostText = '';
-    this._callSubscriber(this);
-  },
-  
-  updateNewPostText(newText) {
-    debugger;
-    this._state.profile.newPostText = newText;
-    debugger;
-    this._callSubscriber(this);
-  },
-  
-  addMessage() {
-    let newMessage = {
-      id: this._state.dialogs.messagesData.length + 1, 
-      text: this._state.dialogs.newMessageText, 
-      authorId: 0
-    }
+};
 
-    this._state.dialogs.messagesData.push(newMessage);
-    this._state.dialogs.newMessageText = '';
-    this._callSubscriber(this);
-  },
-  
-  updateNewMessageText(newText) {
-    this._state.dialogs.newMessageText = newText;
-    this._callSubscriber(this);
-  },
-  // dispatch(action) {
-  //   if (action.type === 'ADD-POST') {
-      
-  //   }
-  // }
-}
 
- 
+  
+
