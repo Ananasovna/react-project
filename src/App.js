@@ -6,7 +6,7 @@ import { News } from './components/News/News';
 import { Music } from './components/Music/Music';
 import { Profile } from './components/Profile/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import { UsersContainer } from './components/Users/UsersContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   return (
