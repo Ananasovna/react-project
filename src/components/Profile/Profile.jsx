@@ -5,8 +5,8 @@ import { MyPostsContainer } from './MyPosts/MyPostsContainer';
 export const Profile = (props) => {
   return (
     <div>
-        <UserInfo />
-        <MyPostsContainer />
+        <UserInfo profile={props.profile}/>
+        <MyPostsContainer profile={props.profile}/>
       </div>
   );
 }

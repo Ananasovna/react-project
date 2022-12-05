@@ -1,11 +1,15 @@
 import styles from './UserCard.module.css';
 import unknownAvatar from '../../assets/img/unknownAvatar.jpg'
+import { NavLink } from 'react-router-dom';
 
 export let UserCard = (props) => {
   return (
     <div className={styles.userCard}>
       <div className={styles.avatarWrapper}>
+        <NavLink to={'/Profile/' + props.user.id}>
         <img src={props.user.photos.small != null ? props.user.photos.small : unknownAvatar} alt="" className={styles.avatar} />
+        </NavLink>
+        
         {props.user.followed 
         ? <button className={styles.followButton} onClick={() => { props.unfollow(props.user.id)}}>Unfollow</button>
         : <button className={styles.followButton} onClick={() => { props.follow(props.user.id)}}>Follow</button>

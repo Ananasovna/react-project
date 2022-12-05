@@ -1,30 +1,45 @@
-import classes from './UserInfo.module.css';
+import styles from "./UserInfo.module.css";
 
-export const UserInfo = () => {
+export const UserInfo = (props) => {
   return (
-    <div className={classes.userInfo}>
-      <div className={classes.imgWrapper}>
+    <div className={styles.userInfo}>
+      <div className={styles.imgWrapper}>
         <img
-          className={classes.img}
+          className={styles.img}
           src="http://www.cita.com.ua/img/ntours/big/4/1599228157.jpg"
           alt="main-img"
         ></img>
       </div>
-      <div className={classes.about}>
+      <div className={styles.aboutWrapper}>
         <img
-          className={classes.avatar}
-          src="https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg"
+          className={styles.avatar}
+          src={props.profile.photos.small}
           alt="main-img"
         ></img>
-        <div>
-          <p className={classes.h3}>Nancy Wheeler</p>
-          <div className={classes.infoWrapper}>
-            <p className={classes.info}>Birth date: 12.03.1970</p>
-            <p className={classes.info}>City: Hawkins</p>
-            <p className={classes.info}>Profession: journalist</p>
+        <div className={styles.about}>
+          <div className={styles.personalInfo}>
+            <p className={styles.h3}>{props.profile.fullName}</p>
+            <div className={styles.infoWrapper}>
+              <p className={styles.info}>
+                Facebook: {props.profile.contacts.facebook}
+              </p>
+              <p className={styles.info}>
+                Github: {props.profile.contacts.github}
+              </p>
+              <p className={styles.info}>
+                Instagram: {props.profile.contacts.instagram}
+              </p>
+            </div>
+          </div>
+          <div className={styles.jobInfo}>
+            {props.profile.lookingForAJob ? 'Job wanted' : 'employed'}
           </div>
         </div>
       </div>
+      <div className={styles.aboutMeWrapper}>
+        <div className={styles.title}>О себе:</div>
+        <div className={styles.aboutMe}>{props.profile.aboutMe}</div>
+      </div>
     </div>
   );
-}
+};
