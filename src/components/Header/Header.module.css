@@ -1,7 +1,7 @@
 .header {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   height: 100px;
-  /* width: 1200px; */
   grid-area: header;
   align-items: center;
   padding: 10px 40px;
@@ -21,4 +21,14 @@
   width: 70px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.authInfo {
+  color: #F6F2F6;
+  letter-spacing: 0.5px;
+}
+
+.authInfo a {
+  color: #F6F2F6;
+  letter-spacing: 0.5px;
 }

@@ -16,7 +16,7 @@ export const Users = (props) => {
     <div className={styles.wrapper}>
       <div className={styles.paginationWrapper}>
         {pages.map(page => {
-          return <span onClick={() => {props.onPageChange(page)}} key= {page} className={props.currentPage === page ? styles.activePage : false}>{page}</span>
+          return <span onClick={() => {props.onPageChange(page)}} key= {page} className={props.currentPage === page ? styles.activePage : undefined}>{page}</span>
         })}
       </div>
       {props.users.map(user => <UserCard 
