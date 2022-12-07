@@ -17,7 +17,8 @@ class UsersContainer extends React.Component {
     this.props.toggleIsFetching(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,
+        {withCredentials: true}
       )
       .then((response) => {
         this.props.toggleIsFetching(false);
@@ -31,13 +32,42 @@ class UsersContainer extends React.Component {
     this.props.setCurrentPage(page);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`,
+        {withCredentials: true}
       )
       .then((response) => {
         this.props.toggleIsFetching(false);
         this.props.setUsers(response.data.items);
       });
   };
+
+  onFollow = (userId) => {
+    axios
+      .post(
+        `https://social-network.samuraijs.com/api/1.0//follow/${userId}`, {},
+        {withCredentials: true,
+        headers: {'API-KEY': 'dd182d82-a56b-4b62-b533-6748f9cec43d'}}
+      )
+      .then((response) => {
+        if (response.data.resultCode == 0) {
+          this.props.follow(userId);
+        }
+      });
+  }
+
+  onUnfollow = (userId) => {
+    axios
+      .delete(
+        `https://social-network.samuraijs.com/api/1.0//follow/${userId}`,
+        {withCredentials: true,
+        headers: {'API-KEY': 'dd182d82-a56b-4b62-b533-6748f9cec43d'}}
+      )
+      .then((response) => {
+        if (response.data.resultCode == 0) {
+          this.props.unfollow(userId);
+        }
+      });
+  }
 
   render() {
     return (
@@ -49,8 +79,9 @@ class UsersContainer extends React.Component {
           onPageChange={this.onPageChange}
           currentPage={this.props.currentPage}
           users={this.props.users}
-          follow={this.props.follow}
-          unfollow={this.props.unfollow}
+          onFollow={this.onFollow}
+          onUnfollow={this.onUnfollow}
+
         />
       </div>
     );
@@ -66,29 +97,6 @@ let mapStateToProps = (state) => {
     isFetching: state.users.isFetching,
   };
 };
-
-// let mapDispatchToProps = (dispatch) => {
-//   return {
-//     follow(userId) {
-//       dispatch(followAC(userId));
-//     },
-//     unfollow(userId) {
-//       dispatch(unfollowAC(userId));
-//     },
-//     setUsers(users) {
-//       dispatch(setUsersAC(users));
-//     },
-//     setCurrentPage(page) {
-//       dispatch(setCurrenPageAC(page));
-//     },
-//     setTotalUsersCount(totalCount) {
-//       dispatch(setTotalUsersCountAC(totalCount));
-//     },
-//     toggleIsFetching(IsFetching) {
-//       dispatch(toggleIsFetchingAC(IsFetching));
-//     },
-//   };
-// };
 
 export default connect(mapStateToProps,
   {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching}
