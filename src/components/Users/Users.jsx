@@ -23,7 +23,8 @@ export const Users = (props) => {
       user={user} 
       onFollow={props.onFollow}
       onUnfollow={props.onUnfollow}
-      key={user.id}/>)}
+      key={user.id}
+      followingInProgress={props.followingInProgress}/>)}
       <button className={styles.button} >Show more</button>
     </div>
   )

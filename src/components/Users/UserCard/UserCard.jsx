@@ -11,8 +11,8 @@ export let UserCard = (props) => {
         </NavLink>
         
         {props.user.followed 
-        ? <button className={styles.followButton} onClick={() => { props.onUnfollow(props.user.id)}}>Unfollow</button>
-        : <button className={styles.followButton} onClick={() => { props.onFollow(props.user.id)}}>Follow</button>
+        ? <button disabled={props.followingInProgress.some(id => id === props.user.id)} className={styles.followButton} onClick={() => { props.onUnfollow(props.user.id)}}>Unfollow</button>
+        : <button disabled={props.followingInProgress.some(id => id === props.user.id)} className={styles.followButton} onClick={() => { props.onFollow(props.user.id)}}>Follow</button>
         }
       </div>
       <div className={styles.userInfoWrapper}>
