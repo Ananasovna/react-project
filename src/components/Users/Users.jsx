@@ -21,8 +21,8 @@ export const Users = (props) => {
       </div>
       {props.users.map(user => <UserCard 
       user={user} 
-      onFollow={props.onFollow}
-      onUnfollow={props.onUnfollow}
+      follow={props.follow}
+      unfollow={props.unfollow}
       key={user.id}
       followingInProgress={props.followingInProgress}/>)}
       <button className={styles.button} >Show more</button>
