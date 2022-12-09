@@ -25,7 +25,7 @@ export const Users = (props) => {
       unfollow={props.unfollow}
       key={user.id}
       followingInProgress={props.followingInProgress}/>)}
-      <button className={styles.button} >Show more</button>
+      <button className={styles.button} onClick={() => props.showMoreUsers(props.pageSize)}>Show more</button>
     </div>
   )
   

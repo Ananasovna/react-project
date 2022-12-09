@@ -9,7 +9,7 @@ export const Dialogs = (props) => {
   }
 
   let onChangeMessageText = (event) => {
-    props.changeMessageText(event.target.value);
+    props.updateNewMessageText(event.target.value);
   }
 
   return (

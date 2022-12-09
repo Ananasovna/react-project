@@ -1,25 +1,31 @@
-import {addMessageActionCreator, updateNewMessageTextActionCreator,} from "../../redux/dialogsReducer";
+import {addMessage, updateNewMessageText,} from "../../redux/dialogsReducer";
 import { Dialogs } from "./Dialogs";
 import { connect } from "react-redux/es/exports";
+import React from "react";
+import { withAuthRedirect } from '../hoc/withAuthRedirect';
+
+class DialogsContainer extends React.Component {
+  
+  render () {
+    return (
+      <Dialogs
+      dialogs={this.props.dialogs}
+      messages={this.props.messages}
+      addMessage={this.props.addMessage}
+      updateNewMessageText={this.props.updateNewMessageText}
+      newMessageText={this.props.newMessageText}
+      />
+    );
+  }
+}
 
 let mapStateToProps = (state) => {
   return {
     messages: state.dialogs.messagesData,
     dialogs: state.dialogs.dialogsData,
     newMessageText: state.dialogs.newMessageText,
+    
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    addMessage() {
-      dispatch(addMessageActionCreator());
-    },
-
-    changeMessageText(event) {
-      dispatch(updateNewMessageTextActionCreator(event));
-    }
-  }
-}
-
-export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+export default connect(mapStateToProps, {addMessage, updateNewMessageText})(withAuthRedirect(DialogsContainer));

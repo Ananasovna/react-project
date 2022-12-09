@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { follow, unfollow, getUsers } from "../../redux/usersReducer";
+import { follow, unfollow, getUsers, getMoreUsers } from "../../redux/usersReducer";
 import { Users } from "./Users";
 import React from "react";
 import { Preloader } from "../Preloader/Preloader";
@@ -13,7 +13,13 @@ class UsersContainer extends React.Component {
     this.props.getUsers(page, this.props.pageSize);
   };
 
+  showMoreUsers = (page) => {
+    this.props.getMoreUsers(page);
+    this.props.getUsers(this.props.currentPage, page);
+  }
+
   render() {
+
     return (
       <div>
         {this.props.isFetching ? <Preloader /> : null}
@@ -26,6 +32,7 @@ class UsersContainer extends React.Component {
           follow={this.props.follow}
           unfollow={this.props.unfollow}
           followingInProgress={this.props.followingInProgress}
+          showMoreUsers={this.showMoreUsers}
         />
       </div>
     );
@@ -43,6 +50,6 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { follow, unfollow, getUsers })(
+export default connect(mapStateToProps, { follow, unfollow, getUsers, getMoreUsers })(
   UsersContainer
 );
