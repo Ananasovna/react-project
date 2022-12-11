@@ -1,4 +1,5 @@
 import styles from "./UserInfo.module.css";
+import ProfileStatus from './ProfileStatus';
 
 export const UserInfo = (props) => {
   return (
@@ -36,10 +37,7 @@ export const UserInfo = (props) => {
           </div>
         </div>
       </div>
-      <div className={styles.aboutMeWrapper}>
-        <div className={styles.title}>О себе:</div>
-        <div className={styles.aboutMe}>{props.profile.aboutMe}</div>
-      </div>
+      <ProfileStatus status={props.profile.aboutMe}/>
     </div>
   );
 };
