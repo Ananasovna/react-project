@@ -1,5 +1,6 @@
 import styles from "./UserInfo.module.css";
 import ProfileStatus from './ProfileStatus';
+import unknownAvatar from '../../assets/img/unknownAvatar.jpg';
 
 export const UserInfo = (props) => {
   return (
@@ -14,7 +15,7 @@ export const UserInfo = (props) => {
       <div className={styles.aboutWrapper}>
         <img
           className={styles.avatar}
-          src={props.profile.photos.small}
+          src={props.profile.photos.small || unknownAvatar}
           alt="main-img"
         ></img>
         <div className={styles.about}>
@@ -37,7 +38,7 @@ export const UserInfo = (props) => {
           </div>
         </div>
       </div>
-      <ProfileStatus status={props.profile.aboutMe}/>
+      <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
     </div>
   );
 };

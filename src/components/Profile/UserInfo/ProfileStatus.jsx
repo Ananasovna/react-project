@@ -4,6 +4,7 @@ import styles from '../UserInfo/ProfileStatus.module.css';
 export class ProfileStaus extends React.Component {
   state = {
     editMode: false,
+    status: this.props.status,
   }
 
   activateEditMode = () => {
@@ -11,7 +12,22 @@ export class ProfileStaus extends React.Component {
   }
 
   deactivateEditMode = () => {
-    this.setState({editMode: false})
+    this.setState({editMode: false});
+    this.props.updateUserStatus(this.state.status);
+  }
+
+  onStatusChange = (event) => {
+    this.setState({
+      status: event.currentTarget.value
+    })
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (this.props.status !== prevState.status) {
+      this.setState({
+        status: this.props.status
+      })
+    }
   }
 
   render() {
@@ -19,11 +35,16 @@ export class ProfileStaus extends React.Component {
       <div>
         {!this.state.editMode ?
         <div>
-          <span onDoubleClick={this.activateEditMode}>{this.props.status}</span>
+          <span onDoubleClick={this.activateEditMode}>{this.props.status || 'No status'}</span>
         </div>
         :
         <div>
-          <input autoFocus={true} onBlur={this.deactivateEditMode} className={styles.input}value={this.props.status} type="text" />
+          <input 
+          onChange={this.onStatusChange} 
+          autoFocus={true} 
+          onBlur={this.deactivateEditMode} 
+          className={styles.input}
+          value={this.state.status} type="text" />
         </div>}
       </div>
     );

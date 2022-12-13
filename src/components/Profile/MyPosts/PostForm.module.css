@@ -1,0 +1,15 @@
+
+
+.input {
+  height: 70px;
+  border: none;
+}
+
+.button{
+  width: 70px;
+  height: 30px;
+  align-self: flex-end;
+  border: none;
+  color: white;
+  background: #58545B;
+}

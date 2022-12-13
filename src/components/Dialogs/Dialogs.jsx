@@ -2,14 +2,12 @@ import classes from './Dialogs.module.css';
 import { Message } from './Message/Message';
 import { DialogItem } from './DialogItem/DialogItem';
 import React from 'react';
+import { DialogReduxForm} from './DialogForm';
 
 export const Dialogs = (props) => {
-  let showText = () => {
-    props.addMessage();
-  }
 
-  let onChangeMessageText = (event) => {
-    props.updateNewMessageText(event.target.value);
+  const onSubmit = (formData) => {
+    props.addMessage(formData.newText);
   }
 
   return (
@@ -19,10 +17,7 @@ export const Dialogs = (props) => {
       </div>
       <div className={classes.messages}>
         {props.messages.map( message => <Message message={message} key={message.id}/>)}
-        <div className={classes.textareaWrapper}>
-          <textarea name="newText" value={props.newMessageText} onChange={onChangeMessageText} className={classes.textarea}></textarea>
-          <button className={classes.textareaButton} onClick={showText}>Send</button>
-        </div>
+        <DialogReduxForm newMessageText={props.newMessageText} onSubmit={onSubmit} />
       </div>
     </div>
   );

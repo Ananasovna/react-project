@@ -1,0 +1,28 @@
+.from{
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+  gap: 5px;
+  min-height: 40px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #B7A7AE;
+}
+
+.textarea {
+  width: 100%;
+  border: 1px solid #B7A7AE;
+  resize: vertical;
+
+}
+
+.textarea:focus {
+  border: 1px solid #B7A7AE;
+  outline: none;
+}
+
+.textareaButton {
+  height: 30px;
+  background: #B7A7AE;
+  border: none;
+}

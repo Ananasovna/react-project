@@ -1,22 +1,19 @@
-import classes from './MyPosts.module.css';
+import styles from './MyPosts.module.css';
 import {Post} from './Post/Post';
 import React from 'react';
+import { PostReduxForm } from './PostForm';
 
 export const MyPosts = (props) => {
-  let onAddPostClick = () => {
-    props.addPost();
-  }
-
-  let onPostChange = (event) => {
-    props.changePostText(event.target.value);
+  const onSubmit = (formData) => {
+    console.log(formData.input);
+    props.addPost(formData.input);
   }
   
   return (
-    <div className={classes.posts}>
-      <div className={classes.inputWrapper}>
-        <div className={classes.h2}>My posts</div>
-        <textarea className={classes.input} value={props.newPostText} onChange={onPostChange}></textarea>
-        <button className={classes.button} onClick={onAddPostClick}>Send</button>
+    <div className={styles.posts}>
+      <div className={styles.inputWrapper}>
+        <div className={styles.h2}>My posts</div>
+        <PostReduxForm onSubmit={onSubmit} />
       </div>
       {props.posts.map( post => <Post key={post.id} text={post.text} likeCounter={post.likeCounter}/>)}
     </div>
