@@ -23,12 +23,12 @@
   overflow: hidden;
 }
 
-.authInfo {
+.authBlock {
   color: #F6F2F6;
   letter-spacing: 0.5px;
 }
 
-.authInfo a {
+.authBlock a {
   color: #F6F2F6;
   letter-spacing: 0.5px;
 }

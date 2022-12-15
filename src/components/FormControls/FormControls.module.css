@@ -4,8 +4,9 @@
   gap: 20px;
 }
 
-.textarea {
+.wrapper textarea {
   flex-shrink: 2;
+  border: 1px solid #B7A7AE;
 }
 
 .inputWrapper input {
@@ -13,8 +14,7 @@
   margin: 0;
 } 
 
-.inputWrapper.error input,
-.inputWrapper.error textarea {
+.inputWrapper.error input {
   border: 2px solid red;
 }
 
