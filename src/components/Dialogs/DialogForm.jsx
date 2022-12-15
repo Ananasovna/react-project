@@ -1,5 +1,7 @@
 import styles from "./DialogForm.module.css";
 import {Field, reduxForm} from 'redux-form';
+import { Textarea } from "../FormControls/FormControls";
+import { required } from "../../utils/formValidators";
 
 export const MessageForm = (props) => {
   return (
@@ -8,7 +10,8 @@ export const MessageForm = (props) => {
         value={props.newMessageText}
         name="newText"
         className={styles.textarea}
-        component='textarea'
+        component={Textarea}
+        validate={required}
       ></Field>
       <button className={styles.textareaButton}>Send</button>
     </form>

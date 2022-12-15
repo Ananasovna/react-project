@@ -22,7 +22,9 @@
 }
 
 .textareaButton {
+  align-self: flex-end;
   height: 30px;
+  width: 70px;
   background: #B7A7AE;
   border: none;
 }

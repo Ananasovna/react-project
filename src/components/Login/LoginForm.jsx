@@ -1,17 +1,23 @@
 import {Field, reduxForm} from 'redux-form';
+import { maxLengthCreator, minLengthCreator, required } from '../../utils/formValidators';
 import styles from './LoginForm.module.css';
+import { Input } from '../FormControls/FormControls';
+
+const maxLength50 = maxLengthCreator(50);
+const minLength8 = minLengthCreator(8);
 
 export const LoginForm = (props) => {
   return <div>
     <form onSubmit={props.handleSubmit}>
       <div>
-        <Field name='email' placeholder='Login' component='input'/>
+        <Field name='email' placeholder='Login' type='email' component={Input} validate={[required, maxLength50]}/>
       </div>
       <div>
-        <Field name='password' placeholder='Password' component='input'/>
+        <Field name='password' placeholder='Password' type='password' component={Input} validate={[required, minLength8]}/>
       </div>
       <div>
-        <Field name='rememberMe' type='checkbox' component='input'/>Remember me
+        <Field name='rememberMe' type='checkbox' component={Input} />
+        <label htmlFor='rememberMe'>Remember me</label>
       </div>
       <button className={styles.button}>Log in</button>
     </form>

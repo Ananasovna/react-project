@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.textarea {
+  flex-shrink: 2;
+}
+
+.inputWrapper input {
+  border: 1px solid #b7a7ae;
+  margin: 0;
+} 
+
+.inputWrapper.error input,
+.inputWrapper.error textarea {
+  border: 2px solid red;
+}
+
+
+.spanBlock {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
+  height: 20px;
+  color: white;
+}
+
+.spanWrapperTriangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #b7a7ae;
+  border-bottom: 10px solid transparent;
+}
+
+.spanWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+  background: #b7a7ae;
+  padding: 10px;
+}

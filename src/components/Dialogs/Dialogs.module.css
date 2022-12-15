@@ -21,29 +21,3 @@
   gap: 10px;
 }
 
-.textareaWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items:flex-end;
-  gap: 5px;
-  min-height: 40px;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #B7A7AE;
-}
-
-.textarea {
-  width: 100%;
-  border: none;
-  resize: vertical;
-}
-
-.textarea:focus {
-  outline: none;
-}
-
-.textareaButton {
-  height: 30px;
-  background: #B7A7AE;
-  border: none;
-}

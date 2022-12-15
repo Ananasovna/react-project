@@ -2,6 +2,7 @@
 
 .input {
   height: 70px;
+  flex-grow: 1;
   border: none;
 }
 
