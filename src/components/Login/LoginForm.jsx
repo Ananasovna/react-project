@@ -19,6 +19,7 @@ export const LoginForm = (props) => {
         <Field name='rememberMe' type='checkbox' component={Input} />
         <label htmlFor='rememberMe'>Remember me</label>
       </div>
+      {props.error && <div className={styles.error}>{props.error}</div>}
       <button className={styles.button}>Log in</button>
     </form>
   </div>
