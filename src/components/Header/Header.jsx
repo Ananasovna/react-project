@@ -10,7 +10,7 @@ export const Header = (props) => {
         </div>
         <div className={styles.authBlock}>
             {props.isAuth ?
-            <AuthInfo login={props.login} logout={props.logout}/>
+            <AuthInfo isAuth={props.isAuth} login={props.login} logout={props.logout}/> 
             : <NavLink to={'/login'}>{'Log in'}</NavLink>} 
           </div>
       </header>
