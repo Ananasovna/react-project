@@ -24,7 +24,7 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({type: SET_USE
 
 export const getAuthUserData = () => {
   return (dispatch) => {
-    authAPI.getAuthData()
+    return authAPI.getAuthData()
       .then((data) => {
         if (data.resultCode === 0) {
           let {id, email, login } = data.data;
@@ -54,4 +54,3 @@ export const logout = () => (dispatch) => {
     } 
   })
 }
-
