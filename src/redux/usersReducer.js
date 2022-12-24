@@ -87,8 +87,7 @@ export const increasePageSize = (pageSize) => ({
   type: SET_PAGE_SIZE, pageSize
 });
 
-export const getUsers = (currentPage, pageSize) => {
-  console.log(pageSize);
+export const requestUsers = (currentPage, pageSize) => {
   return (dispatch) => {
     dispatch(toggleIsFetching(true));
     usersAPI.getUsers(currentPage, pageSize).then((data) => {
