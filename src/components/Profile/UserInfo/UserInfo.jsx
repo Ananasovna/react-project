@@ -1,5 +1,5 @@
 import styles from "./UserInfo.module.css";
-import ProfileStatus from './ProfileStatus';
+import { ProfileStatus } from './ProfileStatus';
 import unknownAvatar from '../../assets/img/unknownAvatar.jpg';
 
 export const UserInfo = (props) => {
