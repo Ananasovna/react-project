@@ -1,6 +1,6 @@
-import { UserInfo } from './UserInfo/UserInfo';
-import { MyPostsContainer } from './MyPosts/MyPostsContainer';
 import { Preloader } from '../Preloader/Preloader';
+import { MyPostsContainer } from './MyPosts/MyPostsContainer';
+import { UserInfo } from './UserInfo/UserInfo';
 
 export const Profile = (props) => {
   if (!props.profile) {

@@ -5,7 +5,6 @@ import React from 'react';
 import { DialogReduxForm} from './DialogForm';
 
 export const Dialogs = (props) => {
-
   const onSubmit = (formData) => {
     props.addMessage(formData.newText);
   }

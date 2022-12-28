@@ -3,9 +3,8 @@ import {Post} from './Post/Post';
 import React from 'react';
 import { PostReduxForm } from './PostForm';
 
-export const MyPosts = (props) => {
+export const MyPosts = React.memo((props) => {
   const onSubmit = (formData) => {
-    console.log(formData.input);
     props.addPost(formData.input);
   }
   
@@ -18,4 +17,4 @@ export const MyPosts = (props) => {
       {props.posts.map( post => <Post key={post.id} text={post.text} likeCounter={post.likeCounter}/>)}
     </div>
   );
-}
+})
