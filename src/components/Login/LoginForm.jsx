@@ -6,9 +6,9 @@ import { Input } from '../FormControls/FormControls';
 const maxLength50 = maxLengthCreator(50);
 const minLength6 = minLengthCreator(6);
 
-export const LoginForm = (props) => {
+export const LoginForm = ({handleSubmit, error}) => {
   return <div>
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <Field name='email' placeholder='Email' type='email' component={Input} validate={[required, maxLength50]}/>
       </div>
@@ -19,10 +19,10 @@ export const LoginForm = (props) => {
         <Field name='rememberMe' type='checkbox' component={Input} />
         <label htmlFor='rememberMe'>Remember me</label>
       </div>
-      {props.error && <div className={styles.error}>{props.error}</div>}
+      {error && <div className={styles.error}>{error}</div>}
       <button className={styles.button}>Log in</button>
     </form>
   </div>
 }
 
-export const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
+export const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);

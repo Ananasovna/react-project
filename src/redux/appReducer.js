@@ -18,9 +18,9 @@ export const appReducer = (state = initialState, action) => {
 
 export const setAuthCompleted = () => ({type: AUTHORIZATION_COMPLETED});
 
-export const setAuthApp = () => (dispatch) => {
-  dispatch(getAuthUserData())
-  .then(() => dispatch(setAuthCompleted()));
+export const setAuthApp = () => async (dispatch) => {
+  await dispatch(getAuthUserData());
+  dispatch(setAuthCompleted());
 
   
 }

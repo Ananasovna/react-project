@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux/es/exports";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {Route, Routes } from "react-router-dom";
 import "./App.css";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -18,15 +18,12 @@ class App extends React.Component {
     this.props.setAuthApp();
   }
 
-  
-
   render() {
     if (!this.props.authCompleted) {
       return <Preloader />
     }
 
     return (
-      <BrowserRouter>
         <div className="app-wrapper">
           <HeaderContainer />
           <SidebarContainer />
@@ -43,7 +40,6 @@ class App extends React.Component {
             </Routes>
           </main>
         </div>
-      </BrowserRouter>
     );
   }
 }

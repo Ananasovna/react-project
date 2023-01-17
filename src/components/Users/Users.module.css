@@ -13,14 +13,3 @@
   letter-spacing: 1.2px;
   background: #58545B;
 }
-
-.paginationWrapper {
-  cursor: pointer;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.activePage {
-  font-weight: 900;
-}
