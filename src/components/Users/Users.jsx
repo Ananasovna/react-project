@@ -7,7 +7,7 @@ export const Users = ({currentPage, totalUsersCount, pageSize, onPageChange, use
   return (
     <div className={styles.wrapper}>
       <Pagination 
-      totalUsersCount={totalUsersCount}
+      totalItemsCount={totalUsersCount}
       pageSize={pageSize}
       onPageChange={onPageChange}
       currentPage={currentPage}/>
