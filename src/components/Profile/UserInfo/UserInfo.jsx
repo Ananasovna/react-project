@@ -1,6 +1,7 @@
 import styles from "./UserInfo.module.css";
 import { ProfileStatus } from './ProfileStatus';
 import unknownAvatar from '../../assets/img/unknownAvatar.jpg';
+import profileImg from '../../assets/img/profileImg.jpg';
 
 export const UserInfo = (props) => {
   return (
@@ -8,7 +9,7 @@ export const UserInfo = (props) => {
       <div className={styles.imgWrapper}>
         <img
           className={styles.img}
-          src="http://www.cita.com.ua/img/ntours/big/4/1599228157.jpg"
+          src={profileImg}
           alt="main-img"
         ></img>
       </div>

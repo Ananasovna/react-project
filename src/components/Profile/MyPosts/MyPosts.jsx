@@ -6,6 +6,7 @@ import { PostReduxForm } from './PostForm';
 export const MyPosts = React.memo((props) => {
   const onSubmit = (formData) => {
     props.addPost(formData.input);
+    formData.input = '';
   }
   
   return (
