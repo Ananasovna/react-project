@@ -1,13 +1,13 @@
 import { usersAPI } from "../components/api/api";
 
-const FOLLOW = "FOLLOW";
-const UNFOLLOW = "UNFOLLOW";
-const SET_USERS = "SET-USERS";
-const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
-const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
-const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING";
-const TOGGLE_FOLLOWING_IN_PROGRESS = "TOGGLE-FOLLOWING-IN-PROGRESS";
-const SET_PAGE_SIZE = "SET-PAGE-SIZE";
+const FOLLOW = "react-project/users/FOLLOW";
+const UNFOLLOW = "react-project/users/UNFOLLOW";
+const SET_USERS = "react-project/users/SET-USERS";
+const SET_CURRENT_PAGE = "react-project/users/SET-CURRENT-PAGE";
+const SET_TOTAL_USERS_COUNT = "react-project/users/SET-TOTAL-USERS-COUNT";
+const TOGGLE_IS_FETCHING = "react-project/users/TOGGLE-IS-FETCHING";
+const TOGGLE_FOLLOWING_IN_PROGRESS = "react-project/users/TOGGLE-FOLLOWING-IN-PROGRESS";
+const SET_PAGE_SIZE = "react-project/users/SET-PAGE-SIZE";
 
 let initialState = {
   usersData: [],

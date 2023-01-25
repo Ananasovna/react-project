@@ -44,6 +44,17 @@ export const profileAPI = {
     .put('/profile/status/', {status})
     .then((response) => response.data)
   },
+
+  saveAvatar(avatar) {
+    const formData = new FormData();
+    formData.append('image', avatar);
+
+    return instance
+    .put('/profile/photo/', formData )
+    .then((response) => response.data)
+
+  },
+
 }
 
 export const authAPI = {

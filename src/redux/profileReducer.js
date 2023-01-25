@@ -1,9 +1,10 @@
 import { profileAPI } from "../components/api/api";
 
-const ADD_POST = "ADD-POST";
-const SET_USER_PROFILE = "SET-USER-PROFILE";
-const SET_USER_STATUS = "SET-USER-STATUS";
-const DELETE_POST = "DELETE_POST";
+const ADD_POST = "react-project/profile/ADD-POST";
+const SET_USER_PROFILE = "react-project/profile/SET-USER-PROFILE";
+const SET_USER_STATUS = "react-project/profile/SET-USER-STATUS";
+const DELETE_POST = "react-project/profile/DELETE-POST";
+const SAVE_AVATAR_SUCCESS = "react-project/profile/SAVE-AVATAR-SUCCESS";
 
 let initialState = {
   postsData: [
@@ -42,6 +43,11 @@ export const profileReducer = (state = initialState, action) => {
         postsData: state.postsData.filter((p) => p.id != action.postId),
       };
     }
+    case SAVE_AVATAR_SUCCESS: {
+      return {
+        ...state,
+        profile: {...state.profile, photos: action.photos }};
+      }
     default:
       return state;
   }
@@ -61,6 +67,7 @@ export const setUserProfile = (profile) => ({
   profile,
 });
 export const setUserStatus = (status) => ({ type: SET_USER_STATUS, status });
+export const saveAvatarSuccess = (photos) => ({ type: SAVE_AVATAR_SUCCESS, photos});
 
 export const getProfile = (userId) => async (dispatch) => {
   const data = await profileAPI.getProfile(userId);
@@ -76,5 +83,14 @@ export const updateUserStatus = (status) => async (dispatch) => {
   const response = await profileAPI.updateProfileStatus(status);
   if (response.resultCode === 0) {
     dispatch(setUserStatus(status));
+  }
+};
+
+export const saveAvatar = (avatar) => async (dispatch, getState) => {
+  const response = await profileAPI.saveAvatar(avatar);
+  if (response.resultCode === 0) {
+    dispatch(saveAvatarSuccess(response.data.photos));
+    const userId = getState().auth.userId;
+    dispatch(getProfile(userId));
   }
 };

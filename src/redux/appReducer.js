@@ -1,6 +1,6 @@
 import { getAuthUserData } from "./authReducer";
 
-const AUTHORIZATION_COMPLETED = 'AUTHORIZATION-COMPLETED';
+const AUTHORIZATION_COMPLETED = 'react-project/app/AUTHORIZATION-COMPLETED';
 
 let initialState = {
   authCompleted: false,

@@ -1,4 +1,4 @@
-const ADD_MESSAGE = 'ADD-MESSAGE';
+const ADD_MESSAGE = 'react-project/dialogs/ADD-MESSAGE';
 
 let initialState = {
   dialogsData: [
@@ -23,7 +23,7 @@ let initialState = {
 
 export const dialogsReducer = (state = initialState, action) => {
   switch(action.type) {
-    case 'ADD-MESSAGE': {
+    case ADD_MESSAGE: {
       let newMessage = {
         id: state.messagesData.length + 1, 
         text: action.newMessageText, 
