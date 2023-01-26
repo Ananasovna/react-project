@@ -3,14 +3,9 @@ import { required } from '../../../utils/formValidators';
 import { Textarea } from '../../FormControls/FormControls';
 import styles from './PostForm.module.css';
 
-export const PostForm = (props) => {
-  const onSubmit = (formData) => {
-    change('post', 'input', '');
-    props.addPost(formData.input);
-  }
-
+export const PostForm = ({handleSubmit}) => {
   return (
-    <form onSubmit={props.handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit}>
       <Field className={styles.input} name='input'  component={Textarea} validate={required}/>
       <button className={styles.button}>Send</button>
     </form>

@@ -20,6 +20,9 @@
 
 
 .spanBlock {
+  position: absolute;
+  right: 0;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   min-width: 100px;

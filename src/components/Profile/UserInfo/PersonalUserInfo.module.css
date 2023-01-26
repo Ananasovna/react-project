@@ -1,0 +1,83 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrapper p {
+  margin: 0;
+  
+}
+
+.wrapper input {
+  padding: 2px;
+}
+
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.jobInfo {
+  align-self: flex-end;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #B7A7AE;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.h3 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0 0 10px;
+}
+
+.settingsButton{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-self: flex-end;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.spanBlock {
+  position: absolute;
+  right: -320px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
+  height: 20px;
+  color: white;
+}
+
+.spanWrapperTriangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #b7a7ae;
+  border-bottom: 10px solid transparent;
+}
+
+.spanWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+  background: #b7a7ae;
+  padding: 10px;
+}

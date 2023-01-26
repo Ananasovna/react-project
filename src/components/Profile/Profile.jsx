@@ -8,6 +8,7 @@ export const Profile = ({
   updateUserStatus,
   isOwner,
   saveAvatar,
+  saveProfile,
 }) => {
   if (!profile) {
     return <Preloader />;
@@ -21,6 +22,7 @@ export const Profile = ({
         status={status}
         updateUserStatus={updateUserStatus}
         saveAvatar={saveAvatar}
+        saveProfile={saveProfile}
       />
       <MyPostsContainer profile={profile} />
     </div>
