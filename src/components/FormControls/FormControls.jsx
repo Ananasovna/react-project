@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./FormControls.module.css";
 
-export const Input = ({ input, meta: {touched, error}, child, ...props }) => {
+export const Input = ({ input, meta: {touched, error}, style = '', ...props }) => {
   const hasError = touched && error;
   return (
     <div className={styles.wrapper}>
@@ -11,7 +11,7 @@ export const Input = ({ input, meta: {touched, error}, child, ...props }) => {
         <input {...input} {...props} />
       </div>
       {hasError && (
-        <div className={styles.spanBlock}>
+        <div className={`${styles.spanBlock} ${style}`}>
           <div className={styles.spanWrapperTriangle}></div>
           <div className={styles.spanWrapper}>
             <span>{error}</span>

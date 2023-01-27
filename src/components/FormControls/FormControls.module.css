@@ -1,5 +1,9 @@
 .wrapper {
+  /* position: relative; */
   display: flex;
+  overflow: visible;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
 }
@@ -20,11 +24,14 @@
 
 
 .spanBlock {
-  position: absolute;
-  right: 0;
+  
+  position: relative;
+  left: 0;
   z-index: 3;
   display: flex;
   justify-content: space-between;
+  overflow: visible;
+  flex-wrap: nowrap;
   min-width: 100px;
   height: 20px;
   color: white;

@@ -7,7 +7,7 @@ import { DialogReduxForm} from './DialogForm';
 export const Dialogs = (props) => {
   const onSubmit = (formData) => {
     props.addMessage(formData.newText);
-    // formData.newText = '';
+    formData.newText = '';
   }
 
   return (

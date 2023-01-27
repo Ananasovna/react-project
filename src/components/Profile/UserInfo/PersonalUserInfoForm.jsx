@@ -14,9 +14,9 @@ const PersonalUserInfoForm = ({ handleSubmit, profile, isOwner, error }) => {
             <label htmlFor="aboutMe">About me: </label>
           <Field
             name="aboutMe"
-            className={styles.hidden}
             component={Input}
             validate={[required]}
+            style={styles.errorSpan}
           ></Field>
           </div>
           <div className={styles.inputWrapper}>
@@ -31,9 +31,9 @@ const PersonalUserInfoForm = ({ handleSubmit, profile, isOwner, error }) => {
             <label htmlFor="lookingForAJobDescription">About job: </label>
           <Field
             name="lookingForAJobDescription"
-            className={styles.hidden}
             component={Input}
             validate={[required]}
+            style={styles.errorSpan}
           ></Field>
           </div>
         </div>

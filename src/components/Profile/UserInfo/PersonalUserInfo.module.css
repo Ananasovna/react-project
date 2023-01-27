@@ -65,6 +65,17 @@
   color: white;
 }
 
+.errorSpan {
+  position: absolute;
+  left: 420px;;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
+  height: 20px;
+  color: white;
+}
+
 .spanWrapperTriangle {
   width: 0;
   height: 0;

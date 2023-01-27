@@ -6,7 +6,7 @@ import { Input } from '../FormControls/FormControls';
 const maxLength50 = maxLengthCreator(50);
 const minLength6 = minLengthCreator(6);
 
-export const LoginForm = ({handleSubmit, error}) => {
+export const LoginForm = ({handleSubmit, error, captchaUrl}) => {
   return <div>
     <form onSubmit={handleSubmit}>
       <div>
@@ -20,6 +20,11 @@ export const LoginForm = ({handleSubmit, error}) => {
         <label htmlFor='rememberMe'>Remember me</label>
       </div>
       {error && <div className={styles.error}>{error}</div>}
+      {captchaUrl &&
+      <div>
+        <img src={captchaUrl} alt="captcha" />
+        <Field name='captcha' component={Input} validate={[required]}/>
+      </div>}
       <button className={styles.button}>Log in</button>
     </form>
   </div>
