@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { connect } from "react-redux/es/exports";
-import {Route, Routes } from "react-router-dom";
+import {Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -31,7 +31,7 @@ class App extends React.Component {
           <main className="main">
             <Suspense fallback={<Preloader/>}>
             <Routes>
-              <Route path="/" element={<ProfileContainer />} />
+              <Route path="/" element={<Navigate to="/Profile" />}  />
               <Route path="/Profile/:userId" element={<ProfileContainer />} />
               <Route path="/Profile" element={<ProfileContainer />} />
               <Route path="/Dialogs/*" element={<DialogsContainer />} />
@@ -39,6 +39,7 @@ class App extends React.Component {
               <Route path="/Music" element={<Music />} />
               <Route path="/Users" element={<UsersContainer />} />
               <Route path="/Login" element={<Login />} />
+              <Route path="*" element={<div>404 not found</div>} />
             </Routes>
             </Suspense>
           </main>
